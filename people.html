@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<head>
+	<title>Sheri B. Pan || a photography portfolio</title>
+	<meta name="description" content="Sheri Pan is a recent college graduate embarking on her new life as an adult by exploring her love of cities, traveling, food and design through photography." />
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+	
+<!--[if IE]>
+
+	<link rel="stylesheet" href="styleie.css" type="text/css" />
+	
+	<link href="lightbox//css/lightbox.css" rel="stylesheet" />
+	
+	<script type="text/javascript">
+    
+    var navCounter = 0;
+
+    function navMove() {
+        var navStyle = document.getElementById("nav").style;
+        
+        if (navCounter <= 20) {
+            document.getElementById("nav").style.top = navCounter + "px";
+            navCounter = navCounter + 1;
+            setTimeout (navMove, 30);
+        }
+    }
+    
+        window.onload = function() {
+    
+        var thumbs = document.getElementById("thumbs");
+        
+        for (var j = 0; j < (imgLoc.length); j++) {
+        
+            var thumbsHrefTag = document.createElement("a");
+            var thumbsImgTag = document.createElement("img");
+            
+            thumbsHrefTag.setAttribute("href", "#");
+            thumbsHrefTag.setAttribute("onClick", "imgEnlarge(" + j + "); return false;");
+            thumbsImgTag.setAttribute("src", "people/peopleT" + imgLoc[j] + ".jpg");
+            thumbsHrefTag.appendChild(thumbsImgTag);
+            thumbs.appendChild(thumbsHrefTag);
+        }
+        setTimeout (navMove, 2000);
+    }
+
+    </script>
+
+<![endif]-->
+
+<!--[if !IE]> -->
+
+	<link rel="stylesheet" href="style.css" type="text/css" />
+
+	<link href="lightbox//css/lightbox.css" rel="stylesheet" />
+	
+    <script type="text/javascript">
+        
+        var navCounter = 20;
+    
+        function navMove() {
+            var navStyle = document.getElementById("nav").style;
+            
+            if (navCounter >= 0) {
+                document.getElementById("nav").style.top = navCounter + "px";
+                navCounter = navCounter - 1;
+                setTimeout (navMove, 30);
+            }
+        }
+        
+        window.onload = function() {
+    
+        var thumbs = document.getElementById("thumbs");
+        
+        for (var j = 0; j < (imgLoc.length); j++) {
+        
+            var thumbsHrefTag = document.createElement("a");
+            var thumbsImgTag = document.createElement("img");
+            
+            thumbsHrefTag.setAttribute("href", "#");
+            thumbsHrefTag.setAttribute("onclick", "imgEnlarge(" + j + "); return false;");
+            thumbsImgTag.setAttribute("src", "people/peopleT" + imgLoc[j] + ".jpg");
+            thumbsHrefTag.appendChild(thumbsImgTag);
+            thumbs.appendChild(thumbsHrefTag);
+        }
+        setTimeout (navMove, 2000);
+        preloadHTML();
+    }
+    
+    </script>
+    
+<!--<![endif]-->
+	
+	<style type="text/css">
+	
+        #thumbs {
+        width: 1030px;
+        height: 75px;
+        position: relative;
+        top: 0;
+        left: 0;
+        }
+
+	</style>
+
+<script src="lightbox/js/jquery-1.7.2.min.js"></script>
+
+<script src="lightbox/js/lightbox.js"></script>
+
+<script type="text/javascript">
+
+    var debug = false;
+    
+    function log(error) {
+        if (window && window.console && window.console.log && debug) {
+            window.console.log("people.html: " + error);
+        }
+    }
+
+    function shuffle(imgLinks) {
+        for (var n = 0; n < imgLinks.length - 1; n++) {
+            var k = n + Math.floor(Math.random() * (imgLinks.length - n));
+    
+            var temp = imgLinks[k];
+            imgLinks[k] = imgLinks[n];
+            imgLinks[n] = temp;
+        }
+    }
+
+    var imgLoc = [];
+    
+    function imgLocNum (max) {
+        
+        for (i = 0; i < max; i++) {
+
+            if (i < 9) {
+                imgLoc[i] = "0" + (i + 1);
+            }
+            
+            else {
+                imgLoc[i] = i + 1;
+            }
+        }
+    return imgLoc;
+    }
+
+    imgLoc = imgLocNum(10);
+    
+    shuffle(imgLoc);
+    
+    function imgEnlarge(number) {
+        var mainPhotoImg = document.getElementById("mainPhoto").getElementsByTagName("img")[0];
+        var mainPhotoUrl ="people/people" + imgLoc[number] + ".jpg";
+        mainPhotoImg.src = mainPhotoUrl;
+        var lightboxPhotoA = document.getElementById("mainPhoto").getElementsByTagName("a")[0];
+        var lightboxUrl ="people/people" + imgLoc[number] + ".jpg";
+        lightboxPhotoA.href = lightboxUrl;
+    }
+
+	var images = new Array();
+	function preload() {
+	    for (i = 0; i < preload.arguments.length; i++) {
+			images[i] = new Image();
+			images[i].src = preload.arguments[i]
+		}
+	}
+	function preloadHTML() {
+        var hidden = document.getElementById("divPreload");
+        var hiddenJavascript = document.createElement("script");
+        hiddenJavascript.setAttribute("type", "text/javascript");
+        hiddenJavascript.innerHTML = 'for (var j = 0; j < 10; j++) {if (j < 9) {preload("people/people0" + (j + 1) + ".jpg");}if (j >= 9) {preload("people/people" + (j + 1) + ".jpg");}}'
+        hidden.appendChild(hiddenJavascript);
+    }
+    
+    var t = null;
+        
+    function scrollStop() {
+        clearTimeout(t);
+    }
+        
+    function scrollRight() {
+        var containerThumbs = document.getElementById("containerThumbs");
+        
+        if (containerThumbs.scrollLeft == 3800) {
+            scrollStop();
+        }
+        
+        else {
+            containerThumbs.scrollLeft = containerThumbs.scrollLeft + 5;
+        
+            t = setTimeout(function() {
+                scrollRight();
+                }, 40);
+        }
+    }
+    
+    function scrollLeftt() {
+        var containerThumbs = document.getElementById("containerThumbs");
+        
+        if (containerThumbs.scrollLeft == 0) {
+            scrollStop();
+        }
+        
+        else {
+            containerThumbs.scrollLeft = containerThumbs.scrollLeft - 5;
+        
+            t = setTimeout(function() {
+                scrollLeftt();
+                }, 50);
+        }
+    }
+
+</script>
+
+</head>
+
+<body>
+
+<div id="nav">
+
+	<a href="landscape.html">
+		<div id="yellow" class="color">
+		
+	    	<div class="colorText" id="yellowText">
+			    <img src="yellowText.jpg" alt="" />
+			</div>
+			
+		    <div class="colorImg">
+		        <img src="yellow.jpg" alt="" />
+		    </div>
+		</div>
+	</a>
+	
+	<a href="food.html">
+			
+		<div id="green" class="color">
+		
+			<div class="colorText" id="greenText">
+			    <img src="greenText.jpg" alt="" />
+			</div>
+			
+		    <div class="colorImg">
+			    <img src="green.jpg" alt="" />
+			</div>
+		</div>
+	</a>
+	
+	<a href="stilllife.html">
+		<div id="pink" class="color">
+		
+			<div class="colorText" id="pinkText">
+			    <img src="pinkText.jpg" alt="" />
+			</div>
+			
+		    <div class="colorImg">
+			    <img src="pink.jpg" alt="" />
+			</div>
+		</div>
+	</a>
+	
+	<a href="people.html">
+		<div id="blue" class="color">
+		
+			<div class="colorText" id="blueText">
+			    <img src="blueText.jpg" alt="" />
+			</div>
+		
+		    <div class="colorImg">
+			    <img src="blue.jpg" alt="" />
+			</div>
+		</div>
+	</a>
+
+</div>
+
+<div id="title">
+	
+	<div id="sheribpan">
+	    Sheri B. Pan, Sheri Pan
+	</div>
+	
+	<a href="index.html"><img src="title.jpg" alt="Sheri B. Pan" /></a>
+	
+</div>
+
+<div id="line">
+	
+	<img src="line.jpg" alt="" />
+	
+</div>
+
+<div id="mainPhoto">
+	
+	<a href="people/people08.jpg" rel="lightbox"><img src="people/people08.jpg" alt="" /></a>
+	
+</div>
+
+<div id="container">
+
+    <div id="arrowLeft">
+    
+        <a href="#" onMouseOver="scrollLeftt()" onMouseOut="scrollStop()"><img src="arrowLeft.jpg" /></a>
+    
+    </div>
+    
+    <div id="containerThumbs">
+        
+        <div id="thumbs"></div>
+    
+    </div>
+    
+    <div id="arrowRight">
+    
+        <a href="#" onMouseOver="scrollRight()" onMouseOUt="scrollStop()"><img src="arrowRight.jpg" /></a>
+    
+    </div>
+
+</div>
+
+<div id="footer">
+
+	(c) <a href="about.html">Sheri B. Pan</a>
+
+</div>
+
+<div class="hidden" id="divPreload">
+</div>
+
+</body>
+</html>
