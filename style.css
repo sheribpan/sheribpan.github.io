@@ -1,0 +1,43 @@
+
+	a {
+	font-family: Courier New;
+	font-size: 14pt;
+	font-style: italic;
+	text-decoration: none;
+	color: #3c81c4;
+	}
+	
+	a:hover {
+	font-family: Courier New;
+	font-size: 14pt;
+	font-style: italic;
+	text-decoration: none;
+	color: #45b26b;
+	}
+	
+	a:visited {
+	font-family: Courier New;
+	font-size: 14pt;
+	font-style: italic;
+	text-decoration: none;
+	color: #3c81c4;
+	}
+
+	#containerIndex {
+	width: 700px;
+	height: 400px;
+	display: flex;
+  align-items: center;
+  margin: auto;
+	}
+	
+	#bodyIndex {
+	width: 100%;
+	margin: 0px;
+	padding: 10px;
+	text-align: center;
+	background: #8e8e8e;
+	color: #ffffff;
+	font-family: Courier New;
+	font-size: 14pt;
+	}
