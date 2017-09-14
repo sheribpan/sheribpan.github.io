@@ -1,43 +1,184 @@
 
-	a {
-	font-family: Courier New;
-	font-size: 14pt;
-	font-style: italic;
-	text-decoration: none;
-	color: #3c81c4;
-	}
-	
-	a:hover {
-	font-family: Courier New;
-	font-size: 14pt;
-	font-style: italic;
-	text-decoration: none;
-	color: #45b26b;
-	}
-	
-	a:visited {
-	font-family: Courier New;
-	font-size: 14pt;
-	font-style: italic;
-	text-decoration: none;
-	color: #3c81c4;
-	}
+  body {
+  color: #383838;
+  }
+  
+  a, a:visited{
+  color: #4F94CD;
+  text-decoration: underline;
+  }
 
-	#containerIndex {
-	width: 700px;
-	height: 400px;
-	display: flex;
-  align-items: center;
+	#container {
+	width: 600px;
   margin: auto;
+  display: flex;
+	flex-wrap: wrap;
+  /*border-width: 1px;
+  border-style: solid;*/
 	}
 	
-	#bodyIndex {
+	#header {
+	width: 100%;
+	margin: 10px 0px 20px 0px;
+	padding: 0px;
+	}
+	
+	#name {
 	width: 100%;
 	margin: 0px;
-	padding: 10px;
 	text-align: center;
-	background: #8e8e8e;
-	color: #ffffff;
-	font-family: Courier New;
+	font-size: 20pt;
+	font-family: Georgia;
+	}
+	
+	#tagline {
+	width: 100%;
+	margin: 0px;
+	/*border-width: 0px 0px 1px 0px;
+	border-style: solid;
+	border-color: #000;*/
+	text-align: center;
 	font-size: 14pt;
+	font-family: Georgia;
+	font-style: italic;
+	color: #8e8e8e;
+	}
+	
+	.bodyImage {
+	width: 100%;
+	margin: auto;
+	padding: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	}
+	
+	#mePhoto {
+	width: 100%;
+	align-self: center;
+	}
+	
+	#bodyText {
+	width: 100%;
+	margin: 20px 0px 0px 0px;
+	text-align: center;
+	font-family: Georgia;
+	font-size: 14pt;
+	}
+	
+  .links {
+	width: 24%;
+	margin: 20px auto 20px auto;
+	text-align: center;
+	background: #A9A9A9;
+	color: #fff;
+	}
+
+	div.links a{
+	display: block;
+	font-family: Georgia;
+	font-size: 14pt;
+	text-decoration: none;
+	color: #fff;
+	}
+
+	div.links a:hover{
+	display: block;
+	background-color: #fff;
+	color: #A9A9A9;
+	}
+
+  /* CV */
+  
+  #tldrCV {
+  width: 90%;
+  margin: 10px auto 50px auto;
+  padding: 15px 10px 15px 10px;
+  text-align: center;
+  background: #D3D3D3;
+  font-family: Georgia;
+	font-size: 14pt;
+	line-height: 30px;
+  }
+  
+  .sectionCV {
+  width: 100%;
+  margin: 0px;
+  text-align: left;
+  font-family: Georgia;
+	font-size: 13pt;
+  }
+
+  .sectionTitleCV {
+  width: 100%;
+  padding: 0px 0px 3px 0px;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #383838;
+  text-align: center;
+  font-family: Georgia;
+  font-size: 15pt;
+  font-variant: small-caps;
+  }
+
+  .jobCV{
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+  .orgCV {
+  width: 90%;
+  margin: 0px 0px 5px 0px;
+  }
+  
+  .timeCV {
+  width: 30%;
+  text-align: right;
+  }
+
+  .titleCV {
+  width: 70%;
+  margin: 0px auto 5px auto;
+  /*margin-left: auto;*/
+  font-style: italic;
+  }
+
+	/* Other */
+	
+	.photoOther {
+	width: 46%;
+	margin: auto;
+	padding: 9px;
+	/*border-width: 1px;
+	border-style: solid;*/
+	}
+	
+	.photoOther img{
+	width: 100%;
+	}
+	
+	img.square {
+	width: 80%;
+	}
+	
+	#bodyTextOther {
+	width: 100%;
+	margin: 20px 0px 20px 0px;
+	text-align: center;
+	font-family: Georgia;
+	font-size: 14pt;
+	}
+	
+	/* Contact */
+	
+	.iconsContact{
+  width: 33%;
+  margin: 30px auto 20px auto;
+  text-align: center;
+	}
+	
+	.iconsContact img{
+	width: 40px;
 	}
